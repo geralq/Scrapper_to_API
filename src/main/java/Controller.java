@@ -1,5 +1,5 @@
 public class Controller {
-    public void control() {
+    public void run() {
         new WebService(new BookingScrapper()).start();
     }
 }

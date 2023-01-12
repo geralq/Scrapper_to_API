@@ -1,11 +1,11 @@
 import java.io.IOException;
 
 public interface HotelScrapper {
-    String name(String hotel) throws IOException;
+    String getHotelName(String hotel) throws IOException;
 
-    String services(String hotel) throws IOException;
+    String getHotelServices(String hotel) throws IOException;
 
-    String comments(String hotel) throws IOException;
+    String getHotelComments(String hotel) throws IOException;
 
-    String ratings(String hotel) throws IOException;
+    String getHotelRatings(String hotel) throws IOException;
 }

@@ -11,22 +11,22 @@ public class WebService {
         get("/hotels/:name", (req, res) -> {
             String hotel = req.params("name");
             res.type("application/json");
-            return scrapper.name(hotel);
+            return scrapper.getHotelName(hotel);
         });
         get("/hotels/:name/services", (req, res) -> {
             String hotel = req.params("name");
             res.type("application/json");
-            return scrapper.services(hotel);
+            return scrapper.getHotelServices(hotel);
         });
         get("/hotels/:name/comments", (req, res) -> {
             String hotel = req.params("name");
             res.type("application/json");
-            return scrapper.comments(hotel);
+            return scrapper.getHotelComments(hotel);
         });
         get("/hotels/:name/ratings", (req, res) -> {
             String hotel = req.params("name");
             res.type("application/json");
-            return scrapper.ratings(hotel);
+            return scrapper.getHotelRatings(hotel);
         });
     }
 }

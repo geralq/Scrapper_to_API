@@ -14,7 +14,7 @@ import java.util.Map;
 public class BookingScrapper implements HotelScrapper {
 
     @Override
-    public String name(String hotel) throws IOException {
+    public String getHotelName(String hotel) throws IOException {
         String url = "https://www.booking.com/hotel/es/" + hotel + ".es.html";
         Document NameDocument = Jsoup.connect(url).get();
         Map<String, String> nameResponse = new LinkedHashMap<>();
@@ -29,7 +29,7 @@ public class BookingScrapper implements HotelScrapper {
     }
 
     @Override
-    public String services(String hotel) throws IOException {
+    public String getHotelServices(String hotel) throws IOException {
         String url = "https://www.booking.com/hotel/es/" + hotel + ".es.html";
         Document serviceDocument = Jsoup.connect(url).get();
         Map<String, List<String>> servicesResponse = new LinkedHashMap<>();
@@ -52,7 +52,7 @@ public class BookingScrapper implements HotelScrapper {
     }
 
     @Override
-    public String comments(String hotel) throws IOException {
+    public String getHotelComments(String hotel) throws IOException {
         String url = "https://www.booking.com/reviews/es/hotel/" + hotel + ".es.html";
         Document commentsDocument = Jsoup.connect(url).get();
         List<Map<String, String>> commentsResponse = new ArrayList<>();
@@ -75,7 +75,7 @@ public class BookingScrapper implements HotelScrapper {
     }
 
     @Override
-    public String ratings(String hotel) throws IOException {
+    public String getHotelRatings(String hotel) throws IOException {
         String url = "https://www.booking.com/hotel/es/" + hotel + ".es.html";
         Document ratingDocument = Jsoup.connect(url).get();
         Map<String, String> ratingsResponse = new LinkedHashMap<>();
